@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="domain and InputFileParser">
-      <change afterPath="$PROJECT_DIR$/domain/src/test/java/DroneTest.java" afterDir="false" />
+    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="unit test in class Drone">
+      <change afterPath="$PROJECT_DIR$/domain/src/test/java/InputDataTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/src/test/java/LocationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Drone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/helper/FileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/helper/FileReaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/DroneDeliveryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/DroneDeliveryServiceTestReadingDataFromTextFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_02DroneDeliveryServiceReadingDataFromTextFileTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,29 +124,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DroneTest.testPlanTripWithMultipleLocations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;DroneTest.testPlanTripWithMultipleLocations&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="DroneTest.testPlanTripWithOneLocationBelowMaxWeight" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -164,6 +138,29 @@
             <option value=":domain:test" />
             <option value="--tests" />
             <option value="&quot;DroneTest.testPlanTripWithOneLocationBelowMaxWeight&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="InputDataTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":domain:test" />
+            <option value="--tests" />
+            <option value="&quot;InputDataTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -219,9 +216,9 @@
       <list>
         <item itemvalue="Gradle.drone-delivery [build]" />
         <item itemvalue="Gradle.drone-delivery [clean]" />
+        <item itemvalue="Gradle.InputDataTest" />
         <item itemvalue="Gradle.DroneTest.testPlanTripWithOneLocationBelowMaxWeight" />
         <item itemvalue="Gradle.DroneTest" />
-        <item itemvalue="Gradle.DroneTest.testPlanTripWithMultipleLocations" />
       </list>
     </recent_temporary>
   </component>
@@ -248,13 +245,32 @@
       <option name="project" value="LOCAL" />
       <updated>1679073266927</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="unit test in class Drone">
+      <created>1679075540858</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679075540858</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="domain and InputFileParser" />
-    <option name="LAST_COMMIT_MESSAGE" value="domain and InputFileParser" />
+    <MESSAGE value="unit test in class Drone" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit test in class Drone" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
