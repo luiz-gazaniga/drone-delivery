@@ -1,6 +1,5 @@
 package usecase;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
@@ -101,7 +100,7 @@ import java.util.*;
 //    }
 //}
 
-public class DroneDeliveryServiceTest {
+public class _01DroneDeliveryServiceFirstConceptTest {
 
     public static void main(String[] args) throws FileNotFoundException {
         if (args.length == 0) {

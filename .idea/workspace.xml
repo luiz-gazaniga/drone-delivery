@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/InputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/drone/delivery/input/InputFileParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/helper/FileReaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/DroneDeliveryServiceTestReadingDataFromTextFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="domain and InputFileParser">
+      <change afterPath="$PROJECT_DIR$/domain/src/test/java/DroneTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/src/main/java/org/drone/delivery/usecase/DroneDeliveryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/application/src/main/java/org/drone/delivery/usecase/DroneDeliveryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/DeliveryLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Drone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/drone/delivery/DroneDeliveryLibraryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/drone/delivery/DroneDeliveryLibraryApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/drone/delivery/input/InputFileReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/drone/delivery/parser/InputParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/helper/FileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/helper/FileReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/DroneDeliveryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/DroneDeliveryServiceTestReadingDataFromTextFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_02DroneDeliveryServiceReadingDataFromTextFileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,36 +103,8 @@
       <recent name="application.core.usecase" />
     </key>
   </component>
-  <component name="RunManager" selected="Application._03DroneDeliveryServiceUseInputParserTest">
-    <configuration name="DroneDeliveryServiceTestReadingDataFromTextFile" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="usecase.DroneDeliveryServiceTestReadingDataFromTextFile" />
-      <module name="drone.delivery.infrastructure.test" />
-      <option name="PROGRAM_PARAMETERS" value="02.txt" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="usecase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="_03DroneDeliveryServiceUseInputParserTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="usecase._03DroneDeliveryServiceUseInputParserTest" />
-      <module name="drone.delivery.infrastructure.test" />
-      <option name="PROGRAM_PARAMETERS" value="02.txt" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="usecase.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FileReaderTest.whenReadWithBufferedReader_thenCorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.drone-delivery [build]">
+    <configuration name="DroneTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -150,9 +115,55 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":infrastructure:test" />
+            <option value=":domain:test" />
             <option value="--tests" />
-            <option value="&quot;helper.FileReaderTest.whenReadWithBufferedReader_thenCorrect&quot;" />
+            <option value="&quot;DroneTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DroneTest.testPlanTripWithMultipleLocations" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":domain:test" />
+            <option value="--tests" />
+            <option value="&quot;DroneTest.testPlanTripWithMultipleLocations&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DroneTest.testPlanTripWithOneLocationBelowMaxWeight" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":domain:test" />
+            <option value="--tests" />
+            <option value="&quot;DroneTest.testPlanTripWithOneLocationBelowMaxWeight&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +217,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application._03DroneDeliveryServiceUseInputParserTest" />
         <item itemvalue="Gradle.drone-delivery [build]" />
         <item itemvalue="Gradle.drone-delivery [clean]" />
-        <item itemvalue="Gradle.FileReaderTest.whenReadWithBufferedReader_thenCorrect" />
-        <item itemvalue="Application.DroneDeliveryServiceTestReadingDataFromTextFile" />
+        <item itemvalue="Gradle.DroneTest.testPlanTripWithOneLocationBelowMaxWeight" />
+        <item itemvalue="Gradle.DroneTest" />
+        <item itemvalue="Gradle.DroneTest.testPlanTripWithMultipleLocations" />
       </list>
     </recent_temporary>
   </component>
@@ -230,12 +241,20 @@
       <option name="project" value="LOCAL" />
       <updated>1679063020170</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="domain and InputFileParser">
+      <created>1679073266927</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679073266927</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="domain and InputFileParser" />
+    <option name="LAST_COMMIT_MESSAGE" value="domain and InputFileParser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -251,23 +270,23 @@
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/DroneDeliveryServiceTest.java</url>
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java</url>
           <line>111</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/DroneDeliveryServiceTest.java</url>
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java</url>
           <line>106</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/DroneDeliveryServiceTestReadingDataFromTextFile.java</url>
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_02DroneDeliveryServiceReadingDataFromTextFileTest.java</url>
           <line>11</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java</url>
-          <line>16</line>
+          <line>13</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DroneDeliveryServiceTestReadingDataFromTextFile {
+public class _02DroneDeliveryServiceReadingDataFromTextFileTest {
 
     public static void main(String[] args) throws IOException {
         if (args.length == 0) {
@@ -14,7 +14,7 @@ public class DroneDeliveryServiceTestReadingDataFromTextFile {
             System.exit(0);
         }
 
-        String fileName = DroneDeliveryServiceTest.class.getClassLoader().getResource(args[0]).getFile();
+        String fileName = _01DroneDeliveryServiceFirstConceptTest.class.getClassLoader().getResource(args[0]).getFile();
         BufferedReader reader = new
                 BufferedReader(new FileReader(fileName));
 

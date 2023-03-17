@@ -1,15 +1,17 @@
 package org.drone.delivery.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Drone {
     private String name;
-    int maxWeight;
+    private int maxWeight;
 
     public Drone(String name, int maxWeight) {
         this.setName(name);
-        this.maxWeight = maxWeight;
+        this.setMaxWeight(maxWeight);
     }
 
     public String getName() {
@@ -20,12 +22,96 @@ public class Drone {
         this.name = name;
     }
 
+    public int getMaxWeight() {
+        return maxWeight;
+    }
+
+    public void setMaxWeight(int maxWeight) {
+        this.maxWeight = maxWeight;
+    }
+
+    //    public List<Location> planTrip(List<Location> locations) {
+    //        int[] dp = new int[maxWeight + 1];
+    //        int n = locations.size();
+    //
+    //        for (int i = 0; i < n; i++) {
+    //            for (int j = maxWeight; j >= locations.get(i).getWeight(); j--) {
+    //                dp[j] = Math.max(dp[j], dp[j - locations.get(i).getWeight()] + locations.get(i).getWeight());
+    //            }
+    //        }
+    //
+    //        ArrayList<Location> selectedLocations = new ArrayList<>();
+    //        int remainingCapacity = maxWeight;
+    //
+    //        for (int i = n - 1; i >= 0; i--) {
+    //            if (remainingCapacity >= locations.get(i).getWeight() &&
+    //                    dp[remainingCapacity] - dp[remainingCapacity - locations.get(i).getWeight()] == locations.get(i).getWeight()) {
+    //                selectedLocations.add(locations.get(i));
+    //                remainingCapacity -= locations.get(i).getWeight();
+    //            }
+    //        }
+    //
+    //        return selectedLocations;
+    //    }
+    //    public List<Location> planTrip(List<Location> locations) {
+    //        // sort locations in descending order of weight
+    //        Collections.sort(locations, Comparator.comparing(Location::getWeight).reversed());
+    //
+    //        ArrayList<Location> selectedLocations = new ArrayList<>();
+    //        int remainingCapacity = maxWeight;
+    //
+    //        for (Location location : locations) {
+    //            if (remainingCapacity >= location.getWeight()) {
+    //                selectedLocations.add(location);
+    //                remainingCapacity -= location.getWeight();
+    //            }
+    //        }
+    //
+    //        return selectedLocations;
+    //    }
+//    public List<Location> planTrip(List<Location> locations) {
+//        // sort locations in descending order of weight
+//        Collections.sort(locations, Comparator.comparing(Location::getWeight)
+//                .thenComparing(Location::getName).reversed());
+//
+//        int[] dp = new int[getMaxWeight() + 1];
+//        int n = locations.size();
+//
+//        for (int i = 0; i < n; i++) {
+//            for (int j = getMaxWeight(); j >= locations.get(i).getWeight(); j--) {
+//                dp[j] = Math.max(dp[j], dp[j - locations.get(i).getWeight()] + locations.get(i).getWeight());
+//            }
+//        }
+//
+//        ArrayList<Location> selectedLocations = new ArrayList<>();
+//        int remainingCapacity = getMaxWeight();
+//
+//        for (int i = n - 1; i >= 0; i--) {
+//            if (remainingCapacity >= locations.get(i).getWeight() &&
+//                    dp[remainingCapacity] - dp[remainingCapacity - locations.get(i).getWeight()] == locations.get(i).getWeight()) {
+//                selectedLocations.add(locations.get(i));
+//                remainingCapacity -= locations.get(i).getWeight();
+//            }
+//        }
+//
+//        return selectedLocations;
+//    }
+
     public List<Location> planTrip(List<Location> locations) {
+        // Sort locations in descending order of weight
+        Collections.sort(locations, Comparator.comparing(Location::getWeight).reversed());
+
+        // Case where there is only one location with weight below max weight
+        if (locations.size() == 1 && locations.get(0).getWeight() <= maxWeight) {
+            return locations;
+        }
+
         int[] dp = new int[maxWeight + 1];
         int n = locations.size();
-
+        // fill the dynamic programming array by iterating through each location and considering whether to include it in the selected locations
         for (int i = 0; i < n; i++) {
             for (int j = maxWeight; j >= locations.get(i).getWeight(); j--) {
+                // if including the current location results in a higher total weight, update the dynamic programming array
                 dp[j] = Math.max(dp[j], dp[j - locations.get(i).getWeight()] + locations.get(i).getWeight());
             }
         }
@@ -33,7 +119,9 @@ public class Drone {
         ArrayList<Location> selectedLocations = new ArrayList<>();
         int remainingCapacity = maxWeight;
 
+        // iterate through the locations in reverse order to build the list of selected locations
         for (int i = n - 1; i >= 0; i--) {
+            // if the current location was selected, add it to the list of selected locations and update the remaining capacity
             if (remainingCapacity >= locations.get(i).getWeight() &&
                     dp[remainingCapacity] - dp[remainingCapacity - locations.get(i).getWeight()] == locations.get(i).getWeight()) {
                 selectedLocations.add(locations.get(i));

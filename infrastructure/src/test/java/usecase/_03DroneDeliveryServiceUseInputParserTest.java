@@ -5,10 +5,7 @@ import org.drone.delivery.domain.InputData;
 import org.drone.delivery.domain.Location;
 import org.drone.delivery.input.InputFileParser;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class _03DroneDeliveryServiceUseInputParserTest {
@@ -19,7 +16,7 @@ public class _03DroneDeliveryServiceUseInputParserTest {
             System.exit(0);
         }
 
-        String fileName = DroneDeliveryServiceTest.class.getClassLoader().getResource(args[0]).getFile();
+        String fileName = _01DroneDeliveryServiceFirstConceptTest.class.getClassLoader().getResource(args[0]).getFile();
         InputData inputData = InputFileParser.parse(fileName);
         List<Drone> drones = inputData.getDrones();
         List<Location> locations = inputData.getLocations();
