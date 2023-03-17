@@ -4,4 +4,6 @@ include 'domain'
 include 'infrastructure'
 include 'infrastructure:src:test:usecase'
 findProject(':infrastructure:src:test:usecase')?.name = 'usecase'
+include 'infrastructure:src:test:domain'
+findProject(':infrastructure:src:test:domain')?.name = 'domain'
 
