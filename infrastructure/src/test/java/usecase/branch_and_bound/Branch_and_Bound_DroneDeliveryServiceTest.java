@@ -1,6 +1,7 @@
 package usecase.branch_and_bound;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,19 +32,25 @@ class Location {
 }
 
 public class Branch_and_Bound_DroneDeliveryServiceTest {
-    static final String OUTPUT_FILE = "output.txt";
+    static final String OUTPUT_FILE = "/output_%s.txt";
 
     public static void main(String[] args) {
         try {
             String inputFile = args[0];
             List<Drone> drones = new ArrayList<>();
             List<Location> locations = new ArrayList<>();
+            String outputDirectory = extractOutputDirectory(inputFile);
             readInputFile(inputFile, drones, locations);
             findOptimalTrips(drones, locations);
-            writeOutputFile(inputFile, drones);
+            writeOutputFile(outputDirectory, drones);
         } catch (IOException e) {
             System.err.println("Error reading or writing file: " + e.getMessage());
         }
+    }
+
+    private static String extractOutputDirectory(String inputFile) {
+        File file = new File(inputFile);
+        return file.getParent();
     }
 
     static void readInputFile(String inputFile, List<Drone> drones, List<Location> locations) throws IOException {
@@ -54,8 +61,8 @@ public class Branch_and_Bound_DroneDeliveryServiceTest {
         while ((line = reader.readLine()) != null) {
             String[] tokens = line.split(", ");
             for (int i = 0; i < tokens.length; i += 2) {
-                String itemType = tokens[i].substring(1);
-                int itemValue = Integer.parseInt(tokens[i + 1].substring(1, tokens[i + 1].length() - 1));
+                String itemType = tokens[i].substring(1).replaceAll("[\\[\\](){}]", "");
+                int itemValue = Integer.parseInt(tokens[i + 1].substring(1, tokens[i + 1].length() - 1).replaceAll("[\\[\\](){}]", ""));
                 if (itemType.startsWith("Drone")) {
                     drones.add(new Drone(itemType, itemValue));
                 } else if (itemType.startsWith("Location")) {
@@ -91,25 +98,31 @@ public class Branch_and_Bound_DroneDeliveryServiceTest {
         }
     }
 
-    static void writeOutputFile(String inputFile, List<Drone> drones) throws IOException {
-        File file = new File(inputFile);
-        String path = file.getParent();
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path + "\\" + OUTPUT_FILE))) {
+    static void writeOutputFile(String outputDirectory, List<Drone> drones) throws IOException {
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
+        String fileName = outputDirectory + String.format(OUTPUT_FILE, timeStamp);
+        System.out.println("Writing file: " + fileName);
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             for (Drone drone : drones) {
                 if (drone.deliveries.isEmpty()) {
                     continue;
                 }
 
-                writer.write(drone.name);
+                writer.write(String.format("[%s]", drone.name));
+                System.out.println(String.format("[%s]", drone.name));
                 writer.newLine();
                 writer.write("Trip #1");
+                System.out.println("Trip #1");
                 writer.newLine();
 
+                StringBuilder sb = new StringBuilder();
                 for (Location location : drone.deliveries) {
-                    writer.write(location.name + ", " + location.weight);
-                    writer.newLine();
+                    sb.append(String.format("[%s],", location.name));
                 }
+                writer.write(sb.toString().replaceAll(",$", ""));
+                System.out.println(sb.toString().replaceAll(",$", ""));
             }
         }
+        System.out.println("Process complete");
     }
 }
