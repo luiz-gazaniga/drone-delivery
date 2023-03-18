@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="unit test in class Drone">
-      <change afterPath="$PROJECT_DIR$/domain/src/test/java/InputDataTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/test/java/LocationTest.java" afterDir="false" />
+    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="unit test in class Location">
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_04DroneDeliveryServiceExtractOutputClassTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/branch_and_bound/Branch_and_Bound_DroneDeliveryServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/dynamicprograming/DynamicProgramingDroneDeliveryService1Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy/GreedyDroneDeliveryService1Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy2/GreedyDroneDeliveryService2Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy3/GreedyDroneDeliveryService3Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy4/greedy2/GreedyDroneDeliveryService4Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack2/MultipleKnapsackDroneDeliveryService2Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/recursive_back_tracking/RecursiveBacktrackingDroneDeliveryServiceTest1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/resources/01.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Drone.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +86,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "temurin-17",
-    "last_opened_file_path": "C:/curso/GITHUB/java/drone-delivery",
+    "last_opened_file_path": "C:/curso/GITHUB/java/drone-delivery/infrastructure/src/test/java/usecase/recursive_back_tracking",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -86,139 +95,224 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\test\java\simple\drone.delivery2\infrastructure\src\test\resources" />
-      <recent name="C:\test\java\simple\drone.delivery\infrastructure\src\main\resources" />
-      <recent name="C:\test\java\simple\drone.delivery\infrastructure\src\test\resources" />
-      <recent name="C:\test\java\simple\drone.delivery\src\main\java" />
-      <recent name="C:\test\java\simple\drone.delivery\src\main\java\application\core\domain" />
+      <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\recursive_back_tracking" />
+      <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\multipleknapsack2" />
+      <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\greedy4" />
+      <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\backtracking" />
+      <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\greedy3" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.drone.delivery.input" />
+      <recent name="branch_and_bound" />
       <recent name="usecase" />
+      <recent name="org.drone.delivery.input" />
       <recent name="org.drone.delivery.domain" />
       <recent name="" />
-      <recent name="application.core.usecase" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.drone-delivery [build]">
-    <configuration name="DroneTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;DroneTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+  <component name="RunManager" selected="Application.RecursiveBacktrackingDroneDeliveryServiceTest1">
+    <configuration name="BacktrackingDroneDeliveryServiceTest" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.backtracking.BacktrackingDroneDeliveryServiceTest" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../../../misc/01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.backtracking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="DroneTest.testPlanTripWithOneLocationBelowMaxWeight" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;DroneTest.testPlanTripWithOneLocationBelowMaxWeight&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="Branch_and_Bound_DroneDeliveryServiceTest" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="branch_and_bound.Branch_and_Bound_DroneDeliveryServiceTest" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../../../misc/01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="branch_and_bound.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="InputDataTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":domain:test" />
-            <option value="--tests" />
-            <option value="&quot;InputDataTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="DynamicProgramingDroneDeliveryService1Test" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.dynamicprograming.DynamicProgramingDroneDeliveryService1Test" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.dynamicprograming.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="drone-delivery [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="GreedyDroneDeliveryService1Test" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.greedy.GreedyDroneDeliveryService1Test" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="02.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="drone-delivery [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="GreedyDroneDeliveryService2Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.greedy2.GreedyDroneDeliveryService2Test" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.greedy2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GreedyDroneDeliveryService3Test" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.greedy3.GreedyDroneDeliveryService3Test" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../../../misc/01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.greedy3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GreedyDroneDeliveryService4Test" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.greedy4.greedy2.GreedyDroneDeliveryService4Test" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.greedy4.greedy2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultipleKnapsackDroneDeliveryService2Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.multipleknapsack2.MultipleKnapsackDroneDeliveryService2Test" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.multipleknapsack2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultipleKnapsackDroneDeliveryServiceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.multipleknapsack.MultipleKnapsackDroneDeliveryServiceTest" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecursiveBacktrackingDroneDeliveryServiceTest1" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.recursive_back_tracking.RecursiveBacktrackingDroneDeliveryServiceTest1" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../../../misc/01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.recursive_back_tracking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="_03DroneDeliveryServiceUseInputParserTest" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase._03DroneDeliveryServiceUseInputParserTest" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="_04DroneDeliveryServiceExtractOutputClassTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase._04DroneDeliveryServiceExtractOutputClassTest" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="usecase.branch_and_bound.Branch_and_Bound_DroneDeliveryServiceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.branch_and_bound.Branch_and_Bound_DroneDeliveryServiceTest" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="c:\misc\01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.branch_and_bound.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="usecase.greedy2.GreedyDroneDeliveryService1Test" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.greedy2.GreedyDroneDeliveryService1Test" />
+      <module name="drone.delivery.infrastructure.test" />
+      <option name="PROGRAM_PARAMETERS" value="01.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="usecase.greedy2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.drone-delivery [build]" />
-        <item itemvalue="Gradle.drone-delivery [clean]" />
-        <item itemvalue="Gradle.InputDataTest" />
-        <item itemvalue="Gradle.DroneTest.testPlanTripWithOneLocationBelowMaxWeight" />
-        <item itemvalue="Gradle.DroneTest" />
+        <item itemvalue="Application.MultipleKnapsackDroneDeliveryService2Test" />
+        <item itemvalue="Application._04DroneDeliveryServiceExtractOutputClassTest" />
+        <item itemvalue="Application.usecase.branch_and_bound.Branch_and_Bound_DroneDeliveryServiceTest" />
+        <item itemvalue="Application.GreedyDroneDeliveryService2Test" />
+        <item itemvalue="Application.MultipleKnapsackDroneDeliveryServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679075540858</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="unit test in class Location">
+      <created>1679075953020</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679075953020</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,7 +371,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="domain and InputFileParser" />
     <MESSAGE value="unit test in class Drone" />
-    <option name="LAST_COMMIT_MESSAGE" value="unit test in class Drone" />
+    <MESSAGE value="unit test in class Location" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit test in class Location" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -287,12 +389,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java</url>
-          <line>111</line>
+          <line>110</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java</url>
-          <line>106</line>
+          <line>105</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -304,6 +406,81 @@
           <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java</url>
           <line>13</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceTest.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/branch_and_bound/Branch_and_Bound_DroneDeliveryServiceTest.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/branch_and_bound/Branch_and_Bound_DroneDeliveryServiceTest.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy3/GreedyDroneDeliveryService3Test.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy3/GreedyDroneDeliveryService3Test.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/backtracking/BacktrackingDroneDeliveryServiceTest.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/backtracking/BacktrackingDroneDeliveryServiceTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy4/greedy2/GreedyDroneDeliveryService4Test.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceTest.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack2/MultipleKnapsackDroneDeliveryService2Test.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/recursive_back_tracking/RecursiveBacktrackingDroneDeliveryServiceTest1.java</url>
+          <line>208</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
