@@ -2,8 +2,7 @@ package usecase.branch_and_bound;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 class Drone {
     String name;
@@ -80,21 +79,31 @@ public class Branch_and_Bound_DroneDeliveryServiceTest {
         // Sort locations by weight, decreasing order
         locations.sort((l1, l2) -> Integer.compare(l2.weight, l1.weight));
 
+        int droneIndex = 0;
+
         for (Location location : locations) {
             Drone bestDrone = null;
             int maxRemainingWeight = -1;
 
-            for (Drone drone : drones) {
+            // Look for the first drone that can carry the location
+            for (int i = droneIndex; i < drones.size(); i++) {
+                Drone drone = drones.get(i);
                 int remainingWeight = drone.maxWeight - location.weight;
                 if (remainingWeight >= 0 && remainingWeight > maxRemainingWeight) {
                     bestDrone = drone;
                     maxRemainingWeight = remainingWeight;
+                    droneIndex = i;
                 }
             }
 
             if (bestDrone != null) {
                 bestDrone.addLocation(location);
             }
+        }
+
+        // Sort the deliveries of each drone by name
+        for (Drone drone : drones) {
+            drone.deliveries.sort((l1, l2) -> l1.name.compareTo(l2.name));
         }
     }
 
@@ -111,18 +120,47 @@ public class Branch_and_Bound_DroneDeliveryServiceTest {
                 writer.write(String.format("[%s]", drone.name));
                 System.out.println(String.format("[%s]", drone.name));
                 writer.newLine();
-                writer.write("Trip #1");
-                System.out.println("Trip #1");
-                writer.newLine();
 
-                StringBuilder sb = new StringBuilder();
-                for (Location location : drone.deliveries) {
-                    sb.append(String.format("[%s],", location.name));
+                List<List<Location>> trips = divideIntoTrips(drone.deliveries, drone.maxWeight);
+                for (int i = 0; i < trips.size(); i++) {
+                    writer.write(String.format("Trip #%d", i + 1));
+                    System.out.println(String.format("Trip #%d", i + 1));
+                    writer.newLine();
+
+                    StringBuilder sb = new StringBuilder();
+                    for (Location location : trips.get(i)) {
+                        sb.append(String.format("[%s], ", location.name));
+                    }
+                    writer.write(sb.toString().replaceAll(", $", ""));
+                    System.out.println(sb.toString().replaceAll(", $", ""));
+                    writer.newLine();
                 }
-                writer.write(sb.toString().replaceAll(",$", ""));
-                System.out.println(sb.toString().replaceAll(",$", ""));
             }
         }
         System.out.println("Process complete");
+    }
+
+    static List<List<Location>> divideIntoTrips(List<Location> deliveries, int maxWeight) {
+        List<List<Location>> trips = new ArrayList<>();
+        List<Location> currentTrip = new ArrayList<>();
+        int currentWeight = 0;
+
+        for (Location location : deliveries) {
+            if (currentWeight + location.weight <= maxWeight) {
+                currentTrip.add(location);
+                currentWeight += location.weight;
+            } else {
+                trips.add(currentTrip);
+                currentTrip = new ArrayList<>();
+                currentTrip.add(location);
+                currentWeight = location.weight;
+            }
+        }
+
+        if (!currentTrip.isEmpty()) {
+            trips.add(currentTrip);
+        }
+
+        return trips;
     }
 }
