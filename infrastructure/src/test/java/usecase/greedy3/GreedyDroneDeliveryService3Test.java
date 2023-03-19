@@ -1,7 +1,5 @@
 package usecase.greedy3;
 
-import usecase.multipleknapsack.MultipleKnapsackDroneDeliveryServiceTest;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

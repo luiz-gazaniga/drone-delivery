@@ -1,7 +1,5 @@
 package usecase.greedy2;
 
-import usecase.multipleknapsack.MultipleKnapsackDroneDeliveryServiceTest;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -37,7 +35,7 @@ public class GreedyDroneDeliveryService2Test {
             return;
         }
 
-        String fileName = MultipleKnapsackDroneDeliveryServiceTest.class.getClassLoader().getResource(args[0]).getFile();
+        String fileName = GreedyDroneDeliveryService2Test.class.getClassLoader().getResource(args[0]).getFile();
         BufferedReader reader = new
                 BufferedReader(new FileReader(fileName));
 

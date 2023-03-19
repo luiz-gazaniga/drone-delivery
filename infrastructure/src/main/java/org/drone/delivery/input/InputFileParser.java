@@ -17,23 +17,23 @@ public class InputFileParser {
     private static final Pattern LOCATION_PATTERN = Pattern.compile("\\[(Location\\w)]\\s*,\\s*\\[(\\d+)]");
 
     public static InputData parse(String filePath) throws IOException {
+        BufferedReader reader = new
+                BufferedReader(new FileReader(filePath));
+
         List<Drone> drones = new ArrayList<>();
         List<Location> locations = new ArrayList<>();
 
-        BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String line;
         while ((line = reader.readLine()) != null) {
-            Matcher droneMatcher = DRONE_PATTERN.matcher(line);
-            Matcher locationMatcher = LOCATION_PATTERN.matcher(line);
-
-            if (droneMatcher.find()) {
-                String droneName = droneMatcher.group(1);
-                int droneCapacity = Integer.parseInt(droneMatcher.group(2));
-                drones.add(new Drone(droneName, droneCapacity));
-            } else if (locationMatcher.find()) {
-                String locationName = locationMatcher.group(1);
-                int locationWeight = Integer.parseInt(locationMatcher.group(2));
-                locations.add(new Location(locationName, locationWeight));
+            String[] tokens = line.split(", ");
+            for (int i = 0; i < tokens.length; i += 2) {
+                String itemType = tokens[i].substring(1).replaceAll("[\\[\\](){}]", "");
+                int itemValue = Integer.parseInt(tokens[i + 1].replaceAll("[\\[\\](){}]", ""));
+                if (itemType.startsWith("Drone")) {
+                    drones.add(new Drone(itemType, itemValue));
+                } else if (itemType.startsWith("Location")) {
+                    locations.add(new Location(itemType, itemValue));
+                }
             }
         }
         reader.close();
