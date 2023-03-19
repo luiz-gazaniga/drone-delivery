@@ -6,6 +6,7 @@ import org.drone.delivery.domain.Location;
 import org.drone.delivery.ports.outbound.InputFileParser;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,8 +56,18 @@ public class InputFileParserImpl implements InputFileParser {
     }
 
     private static void validateArgs(String[] args) {
-        if (args.length == 0) {
-            throw new IllegalArgumentException("Please provide an input file.");
+        if (args == null || args.length == 0) {
+            throw new IllegalArgumentException("Input arguments cannot be null or empty");
+        }
+        File file = new File(args[0]);
+        if (!file.exists()) {
+            throw new IllegalArgumentException("Input file does not exist");
+        }
+        if (!file.isFile()) {
+            throw new IllegalArgumentException("Input path does not represent a file");
+        }
+        if (!file.getName().endsWith(".txt")) {
+            throw new IllegalArgumentException("Input file is not a valid text file");
         }
     }
 }
