@@ -3,6 +3,7 @@ package org.drone.delivery.input;
 import org.drone.delivery.domain.Drone;
 import org.drone.delivery.domain.InputData;
 import org.drone.delivery.domain.Location;
+import org.drone.delivery.ports.outbound.InputFileParser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InputFileParser {
+public class InputFileParserImpl implements InputFileParser {
     // Constants for strings used in the class
     private static final String DRONE_PREFIX = "Drone";
     private static final String LOCATION_PREFIX = "Location";
@@ -18,7 +19,7 @@ public class InputFileParser {
     private static final String ITEM_SEPARATOR = ", ";
     private static final String EMPTY_STRING = "";
 
-    public static InputData parse(String[] args) throws IOException {
+    public InputData parse(String[] args) throws IOException {
         validateArgs(args);
         BufferedReader reader = new BufferedReader(new FileReader(args[0]));
 

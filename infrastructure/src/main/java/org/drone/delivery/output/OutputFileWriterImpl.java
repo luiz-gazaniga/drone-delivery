@@ -1,11 +1,12 @@
 package org.drone.delivery.output;
 
 import org.drone.delivery.domain.Drone;
+import org.drone.delivery.ports.outbound.OutputFileWriter;
 
 import java.util.List;
 
-public class OutputFileWriter {
-    public static void writeResults(String[] args, List<Drone> drones) {
+public class OutputFileWriterImpl implements OutputFileWriter {
+    public void writeResults(String[] args, List<Drone> drones) {
         boolean debug = args.length == 2 && args[1].equals("debug");
         for (Drone drone : drones) {
             if (debug) System.out.println("[" + drone.getName() + "]");
