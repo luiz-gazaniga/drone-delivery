@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="refactor.">
+    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="input file">
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/drone/delivery/output/OutputFileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/src/main/java/org/drone/delivery/input/InputFileParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/main/java/org/drone/delivery/input/InputFileParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy/GreedyDroneDeliveryService1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy/GreedyDroneDeliveryService1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy2/GreedyDroneDeliveryService2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy2/GreedyDroneDeliveryService2Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy3/GreedyDroneDeliveryService3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy3/GreedyDroneDeliveryService3Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy4/greedy2/GreedyDroneDeliveryService4Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy4/greedy2/GreedyDroneDeliveryService4Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceRefactorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceRefactorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +216,7 @@
     <configuration name="MultipleKnapsackDroneDeliveryServiceRefactorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="usecase.multipleknapsack.MultipleKnapsackDroneDeliveryServiceRefactorTest" />
       <module name="drone.delivery.infrastructure.test" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../../../misc/01.txt" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../../../misc/01.txt debug" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="usecase.multipleknapsack.*" />
@@ -376,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679191738897</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="input file">
+      <created>1679193432165</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679193432165</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -398,7 +401,8 @@
     <MESSAGE value="Greedy, MultipleKnapsack, Recursive Backtracking" />
     <MESSAGE value="output optimization" />
     <MESSAGE value="refactor." />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor." />
+    <MESSAGE value="input file" />
+    <option name="LAST_COMMIT_MESSAGE" value="input file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

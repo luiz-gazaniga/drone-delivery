@@ -9,35 +9,53 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class InputFileParser {
-    private static final Pattern DRONE_PATTERN = Pattern.compile("\\[(Drone\\w)]\\s*,\\s*\\[(\\d+)]");
-    private static final Pattern LOCATION_PATTERN = Pattern.compile("\\[(Location\\w)]\\s*,\\s*\\[(\\d+)]");
+    // Constants for strings used in the class
+    private static final String DRONE_PREFIX = "Drone";
+    private static final String LOCATION_PREFIX = "Location";
+    private static final String REGEX_TO_REMOVE_BRACKETS = "[\\[\\](){}]";
+    private static final String ITEM_SEPARATOR = ", ";
+    private static final String EMPTY_STRING = "";
 
-    public static InputData parse(String filePath) throws IOException {
-        BufferedReader reader = new
-                BufferedReader(new FileReader(filePath));
+    public static InputData parse(String[] args) throws IOException {
+        validateArgs(args);
+        BufferedReader reader = new BufferedReader(new FileReader(args[0]));
 
         List<Drone> drones = new ArrayList<>();
         List<Location> locations = new ArrayList<>();
 
         String line;
         while ((line = reader.readLine()) != null) {
-            String[] tokens = line.split(", ");
+            // Split the line into tokens using the defined separator
+            String[] tokens = line.split(ITEM_SEPARATOR);
             for (int i = 0; i < tokens.length; i += 2) {
-                String itemType = tokens[i].substring(1).replaceAll("[\\[\\](){}]", "");
-                int itemValue = Integer.parseInt(tokens[i + 1].replaceAll("[\\[\\](){}]", ""));
-                if (itemType.startsWith("Drone")) {
+                String itemType = tokens[i].substring(1).replaceAll(REGEX_TO_REMOVE_BRACKETS, EMPTY_STRING);
+                int itemValue = Integer.parseInt(tokens[i + 1].replaceAll(REGEX_TO_REMOVE_BRACKETS, EMPTY_STRING));
+
+                // Validate and create Drone or Location objects based on the itemType
+                if (itemType.startsWith(DRONE_PREFIX)) {
                     drones.add(new Drone(itemType, itemValue));
-                } else if (itemType.startsWith("Location")) {
+                } else if (itemType.startsWith(LOCATION_PREFIX)) {
                     locations.add(new Location(itemType, itemValue));
+                } else {
+                    throw new IllegalArgumentException("Invalid item type: " + itemType);
                 }
             }
         }
         reader.close();
 
+        // Validate that there are at least one drone and one location
+        if (drones.isEmpty() || locations.isEmpty()) {
+            throw new IllegalArgumentException("Input file must contain at least one drone and one location.");
+        }
+
         return new InputData(drones, locations);
+    }
+
+    private static void validateArgs(String[] args) {
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Please provide an input file.");
+        }
     }
 }

@@ -4,6 +4,8 @@ import org.drone.delivery.domain.Drone;
 import org.drone.delivery.domain.InputData;
 import org.drone.delivery.domain.Location;
 import org.drone.delivery.input.InputFileParser;
+import org.drone.delivery.output.OutputFileWriter;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -11,21 +13,13 @@ import java.util.List;
 
 public class MultipleKnapsackDroneDeliveryServiceRefactorTest {
     public static void main(String[] args) throws IOException {
-        if (validateArgs(args)) return;
-
-        InputData data = InputFileParser.parse(args[0]);
-        assignDeliveries(data.getDrones(), data.getLocations());
-
-        printResults(data.getDrones());
-
+        execute(args);
     }
 
-    private static boolean validateArgs(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Please provide an input file.");
-            return true;
-        }
-        return false;
+    private static void execute(String[] args) throws IOException {
+        InputData data = InputFileParser.parse(args);
+        assignDeliveries(data.getDrones(), data.getLocations());
+        printResults(args, data.getDrones());
     }
 
     public static void assignDeliveries(List<Drone> drones, List<Location> locations) {
@@ -50,14 +44,7 @@ public class MultipleKnapsackDroneDeliveryServiceRefactorTest {
         }
     }
 
-    public static void printResults(List<Drone> drones) {
-        for (Drone drone : drones) {
-            System.out.println("[" + drone.getName() + "]");
-            for (int i = 0; i < drone.getTrips().size(); i++) {
-                System.out.println("Trip #" + (i + 1));
-                drone.getTrips().get(i).forEach(location -> System.out.println("[" + location.getName() + "]"));
-            }
-            System.out.println();
-        }
+    public static void printResults(String[] args, List<Drone> drones) {
+        OutputFileWriter.writeResults(args, drones);
     }
 }
