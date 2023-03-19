@@ -2,36 +2,16 @@ package usecase.multipleknapsack;
 
 import usecase.dynamicprograming.DynamicProgramingDroneDeliveryService1Test;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 //Best until now
 
-class Drone {
-    String name;
-    int maxWeight;
-    List<List<Location>> trips;
-
-    public Drone(String name, int maxWeight) {
-        this.name = name;
-        this.maxWeight = maxWeight;
-        this.trips = new ArrayList<>();
-    }
-}
-
-class Location {
-    String name;
-    int weight;
-
-    public Location(String name, int weight) {
-        this.name = name;
-        this.weight = weight;
-    }
-}
-
-public class MultipleKnapsackDroneDeliveryServiceTest {
+public class MultipleKnapsackDroneDeliveryServiceRefactorTest {
     public static void main(String[] args) throws IOException {
         if (args.length == 0) {
             System.out.println("Please provide an input file.");

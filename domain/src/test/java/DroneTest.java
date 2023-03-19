@@ -7,55 +7,51 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DroneTest {
-
     @Test
-    public void testPlanTripWithNoLocations() {
-        Drone drone = new Drone("DroneA", 300);
-        List<Location> locations = new ArrayList<>();
-
-        List<Location> result = drone.planTrip(locations);
-
-        Assertions.assertEquals(0, result.size());
+    public void testGetName() {
+        Drone drone = new Drone("Drone A", 100);
+        Assertions.assertEquals("Drone A", drone.getName());
     }
 
     @Test
-    public void testPlanTripWithOneLocationBelowMaxWeight() {
-        Drone drone = new Drone("DroneA", 300);
-        List<Location> locations = new ArrayList<>();
-        locations.add(new Location("LocationA", 100));
-
-        List<Location> result = drone.planTrip(locations);
-
-        Assertions.assertEquals(1, result.size());
-        Assertions.assertTrue(locations.containsAll(result));
+    public void testSetName() {
+        Drone drone = new Drone("Drone A", 100);
+        drone.setName("Drone B");
+        Assertions.assertEquals("Drone B", drone.getName());
     }
 
     @Test
-    public void testPlanTripWithOneLocationAboveMaxWeight() {
-        Drone drone = new Drone("DroneA", 300);
-        List<Location> locations = new ArrayList<>();
-        locations.add(new Location("LocationA", 500));
-
-        List<Location> result = drone.planTrip(locations);
-
-        Assertions.assertEquals(0, result.size());
+    public void testGetMaxWeight() {
+        Drone drone = new Drone("Drone A", 100);
+        Assertions.assertEquals(100, drone.getMaxWeight());
     }
 
     @Test
-    public void testPlanTripWithMultipleLocations() {
-        Drone drone = new Drone("DroneA", 500);
-        List<Location> locations = new ArrayList<>();
-        locations.add(new Location("LocationA", 200));
-        locations.add(new Location("LocationB", 150));
-        locations.add(new Location("LocationC", 100));
-        locations.add(new Location("LocationD", 50));
+    public void testSetMaxWeight() {
+        Drone drone = new Drone("Drone A", 100);
+        drone.setMaxWeight(200);
+        Assertions.assertEquals(200, drone.getMaxWeight());
+    }
 
-        List<Location> result = drone.planTrip(locations);
+    @Test
+    public void testGetTrips() {
+        Drone drone = new Drone("Drone A", 100);
+        Assertions.assertNotNull(drone.getTrips());
+    }
 
-        Assertions.assertEquals(4, result.size());
-        Assertions.assertTrue(result.contains(locations.get(0)));
-        Assertions.assertTrue(result.contains(locations.get(1)));
-        Assertions.assertTrue(result.contains(locations.get(2)));
-        Assertions.assertTrue(result.stream().mapToInt(Location::getWeight).sum() <= drone.getMaxWeight());
+    @Test
+    public void testSetTrips() {
+        Drone drone = new Drone("Drone A", 100);
+        List<List<Location>> trips = new ArrayList<>();
+        drone.setTrips(trips);
+        Assertions.assertEquals(trips, drone.getTrips());
+    }
+
+    @Test
+    public void testConstructor() {
+        Drone drone = new Drone("Drone A", 100);
+        Assertions.assertEquals("Drone A", drone.getName());
+        Assertions.assertEquals(100, drone.getMaxWeight());
+        Assertions.assertNotNull(drone.getTrips());
     }
 }

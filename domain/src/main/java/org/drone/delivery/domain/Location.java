@@ -1,13 +1,5 @@
 package org.drone.delivery.domain;
 public class Location {
-    private String name;
-    private int weight;
-
-    public Location(String name, int weight) {
-        this.setName(name);
-        this.setWeight(weight);
-    }
-
     public String getName() {
         return name;
     }
@@ -21,6 +13,14 @@ public class Location {
     }
 
     public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    String name;
+    int weight;
+
+    public Location(String name, int weight) {
+        this.name = name;
         this.weight = weight;
     }
 }

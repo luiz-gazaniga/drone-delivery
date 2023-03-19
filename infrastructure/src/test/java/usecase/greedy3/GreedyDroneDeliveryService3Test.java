@@ -78,11 +78,11 @@ public class GreedyDroneDeliveryService3Test {
         String line;
         while ((line = reader.readLine()) != null) {
             String[] tokens = line.split(",");
-            String name = tokens[0].trim();
+            String name = tokens[0].trim().replaceAll("[\\[\\](){}]", "");
             int maxWeight = Integer.parseInt(tokens[1].trim().replaceAll("[\\[\\](){}]", ""));
             drones.add(new Drone(name, maxWeight));
             for (int i = 2; i < tokens.length; i += 2) {
-                String locationName = tokens[i].trim();
+                String locationName = tokens[i].trim().replaceAll("[\\[\\](){}]", "");
                 int weight = Integer.parseInt(tokens[i + 1].trim().replaceAll("[\\[\\](){}]", ""));
                 Location location = locations.computeIfAbsent(locationName, k -> new Location(locationName));
                 location.addPackage(weight);

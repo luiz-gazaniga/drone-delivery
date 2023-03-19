@@ -48,8 +48,8 @@ public class GreedyDroneDeliveryService2Test {
         while ((line = reader.readLine()) != null) {
             String[] tokens = line.split(", ");
             for (int i = 0; i < tokens.length; i += 2) {
-                String itemType = tokens[i].substring(1);
-                int itemValue = Integer.parseInt(tokens[i + 1].substring(1, tokens[i + 1].length() - 1));
+                String itemType = tokens[i].substring(1).replaceAll("[\\[\\](){}]", "");
+                int itemValue = Integer.parseInt(tokens[i + 1].substring(1, tokens[i + 1].length() - 1).replaceAll("[\\[\\](){}]", ""));
                 if (itemType.startsWith("Drone")) {
                     drones.add(new Drone(itemType, itemValue));
                 } else if (itemType.startsWith("Location")) {
@@ -91,9 +91,12 @@ public class GreedyDroneDeliveryService2Test {
                     System.out.println("[" + drone.name + "]");
                     System.out.println("Trip #" + tripNumber);
                     currentTrip.sort(Comparator.comparing(l -> l.name));
+                    StringBuilder sb = new StringBuilder();
                     for (Location location : currentTrip) {
-                        System.out.print("[" + location.name + "], ");
+                        sb.append("[" + location.name + "], ");
+
                     }
+                    System.out.print(sb.toString().replaceAll(", $", ""));
                     System.out.println();
                 }
                 tripNumber++;

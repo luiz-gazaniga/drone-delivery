@@ -6,28 +6,34 @@ public class LocationTest {
 
     @Test
     public void testGetName() {
-        Location location = new Location("LocationA", 100);
-        Assertions.assertEquals("LocationA", location.getName());
+        Location location = new Location("Location A", 10);
+        Assertions.assertEquals("Location A", location.getName());
     }
 
     @Test
     public void testSetName() {
-        Location location = new Location("LocationA", 100);
-        location.setName("LocationB");
-        Assertions.assertEquals("LocationB", location.getName());
+        Location location = new Location("Location A", 10);
+        location.setName("Location B");
+        Assertions.assertEquals("Location B", location.getName());
     }
 
     @Test
     public void testGetWeight() {
-        Location location = new Location("LocationA", 100);
-        Assertions.assertEquals(100, location.getWeight());
+        Location location = new Location("Location A", 10);
+        Assertions.assertEquals(10, location.getWeight());
     }
 
     @Test
     public void testSetWeight() {
-        Location location = new Location("LocationA", 100);
-        location.setWeight(200);
-        Assertions.assertEquals(200, location.getWeight());
+        Location location = new Location("Location A", 10);
+        location.setWeight(20);
+        Assertions.assertEquals(20, location.getWeight());
     }
 
+    @Test
+    public void testConstructor() {
+        Location location = new Location("Location A", 10);
+        Assertions.assertEquals("Location A", location.getName());
+        Assertions.assertEquals(10, location.getWeight());
+    }
 }

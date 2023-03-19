@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="output optimization">
+      <change afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceRefactorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/branch_and_bound/Branch_and_Bound_DroneDeliveryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/branch_and_bound/Branch_and_Bound_DroneDeliveryServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Drone.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Drone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/domain/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/test/java/DroneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/DroneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/test/java/LocationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/LocationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/helper/FileReaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/helper/FileReaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_02DroneDeliveryServiceReadingDataFromTextFileTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/_04DroneDeliveryServiceExtractOutputClassTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/dynamicprograming/DynamicProgramingDroneDeliveryService1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/dynamicprograming/DynamicProgramingDroneDeliveryService1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy/GreedyDroneDeliveryService1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy/GreedyDroneDeliveryService1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy2/GreedyDroneDeliveryService2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy2/GreedyDroneDeliveryService2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy3/GreedyDroneDeliveryService3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy3/GreedyDroneDeliveryService3Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy4/greedy2/GreedyDroneDeliveryService4Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/greedy4/greedy2/GreedyDroneDeliveryService4Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/usecase/multipleknapsack/MultipleKnapsackDroneDeliveryServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +91,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/code/java/demo-microservices-with-log-aggregation&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/curso/GITHUB/java/drone-delivery/infrastructure/src/test/java/usecase/multipleknapsack&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -84,11 +100,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\multipleknapsack" />
       <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\recursive_back_tracking" />
       <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\multipleknapsack2" />
       <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\greedy4" />
       <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\backtracking" />
-      <recent name="C:\curso\GITHUB\java\drone-delivery\infrastructure\src\test\java\usecase\greedy3" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="branch_and_bound" />
@@ -98,7 +114,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.usecase.branch_and_bound.Branch_and_Bound_DroneDeliveryServiceTest">
+  <component name="RunManager" selected="Application.MultipleKnapsackDroneDeliveryServiceRefactorTest">
     <configuration name="BacktrackingDroneDeliveryServiceTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="usecase.backtracking.BacktrackingDroneDeliveryServiceTest" />
       <module name="drone.delivery.infrastructure.test" />
@@ -211,13 +227,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultipleKnapsackDroneDeliveryServiceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="usecase.multipleknapsack.MultipleKnapsackDroneDeliveryServiceTest" />
+    <configuration name="MultipleKnapsackDroneDeliveryServiceRefactorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="usecase.multipleknapsack.MultipleKnapsackDroneDeliveryServiceRefactorTest" />
       <module name="drone.delivery.infrastructure.test" />
       <option name="PROGRAM_PARAMETERS" value="01.txt" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="usecase.greedy.*" />
+          <option name="PATTERN" value="usecase.multipleknapsack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -297,11 +313,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MultipleKnapsackDroneDeliveryServiceRefactorTest" />
         <item itemvalue="Application.MultipleKnapsackDroneDeliveryService2Test" />
         <item itemvalue="Application._04DroneDeliveryServiceExtractOutputClassTest" />
         <item itemvalue="Application.usecase.branch_and_bound.Branch_and_Bound_DroneDeliveryServiceTest" />
         <item itemvalue="Application.GreedyDroneDeliveryService2Test" />
-        <item itemvalue="Application.MultipleKnapsackDroneDeliveryServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -356,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679162376062</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="output optimization">
+      <created>1679162913016</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679162913016</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -393,38 +416,18 @@
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java</url>
-          <line>110</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_01DroneDeliveryServiceFirstConceptTest.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_02DroneDeliveryServiceReadingDataFromTextFileTest.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/infrastructure/src/test/java/usecase/_03DroneDeliveryServiceUseInputParserTest.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java</url>
-          <line>42</line>
+          <line>40</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java</url>
-          <line>20</line>
+          <line>18</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/infrastructure/src/test/java/helper/OutputFileWriter.java</url>
-          <line>39</line>
+          <line>37</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

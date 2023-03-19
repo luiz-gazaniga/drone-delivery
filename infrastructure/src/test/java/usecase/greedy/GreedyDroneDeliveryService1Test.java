@@ -37,7 +37,7 @@ public class GreedyDroneDeliveryService1Test {
             return;
         }
 
-        String fileName = MultipleKnapsackDroneDeliveryServiceTest.class.getClassLoader().getResource(args[0]).getFile();
+        String fileName = GreedyDroneDeliveryService1Test.class.getClassLoader().getResource(args[0]).getFile();
         BufferedReader reader = new
                 BufferedReader(new FileReader(fileName));
 
@@ -48,8 +48,8 @@ public class GreedyDroneDeliveryService1Test {
         while ((line = reader.readLine()) != null) {
             String[] tokens = line.split(", ");
             for (int i = 0; i < tokens.length; i += 2) {
-                String itemType = tokens[i].substring(1);
-                int itemValue = Integer.parseInt(tokens[i + 1].substring(1, tokens[i + 1].length() - 1));
+                String itemType = tokens[i].substring(1).replaceAll("[\\[\\](){}]", "");
+                int itemValue = Integer.parseInt(tokens[i + 1].substring(1, tokens[i + 1].length() - 1).replaceAll("[\\[\\](){}]", ""));
                 if (itemType.startsWith("Drone")) {
                     drones.add(new Drone(itemType, itemValue));
                 } else if (itemType.startsWith("Location")) {
