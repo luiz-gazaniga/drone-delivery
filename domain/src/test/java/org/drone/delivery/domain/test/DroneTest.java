@@ -1,3 +1,5 @@
+package org.drone.delivery.domain.test;
+
 import org.drone.delivery.domain.Drone;
 import org.drone.delivery.domain.Location;
 import org.junit.jupiter.api.Assertions;
