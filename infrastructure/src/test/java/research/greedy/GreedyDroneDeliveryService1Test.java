@@ -1,4 +1,4 @@
-package usecase.greedy;
+package research.greedy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

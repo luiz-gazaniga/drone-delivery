@@ -1,4 +1,4 @@
-package org.drone.delivery.input;
+package org.drone.delivery.infrastructure.input;
 
 import org.drone.delivery.domain.Drone;
 import org.drone.delivery.domain.InputData;
@@ -31,6 +31,8 @@ public class InputFileParserImpl implements InputFileParser {
         while ((line = reader.readLine()) != null) {
             // Split the line into tokens using the defined separator
             String[] tokens = line.split(ITEM_SEPARATOR);
+            if (tokens.length < 2)
+                throw new IllegalArgumentException("Invalid input content.");
             for (int i = 0; i < tokens.length; i += 2) {
                 String itemType = tokens[i].substring(1).replaceAll(REGEX_TO_REMOVE_BRACKETS, EMPTY_STRING);
                 int itemValue = Integer.parseInt(tokens[i + 1].replaceAll(REGEX_TO_REMOVE_BRACKETS, EMPTY_STRING));

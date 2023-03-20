@@ -1,10 +1,8 @@
-package org.drone.delivery.output;
+package org.drone.delivery.infrastructure.output;
 
 import org.drone.delivery.domain.Drone;
 import org.drone.delivery.domain.Location;
 import org.drone.delivery.ports.outbound.OutputWriter;
-
-import java.io.File;
 import java.util.List;
 
 class ConsoleOutputWriter implements OutputWriter {

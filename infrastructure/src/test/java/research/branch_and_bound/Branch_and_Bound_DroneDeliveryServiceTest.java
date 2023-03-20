@@ -1,4 +1,4 @@
-package usecase.branch_and_bound;
+package research.branch_and_bound;
 
 import java.io.*;
 import java.text.SimpleDateFormat;

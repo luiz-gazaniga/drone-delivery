@@ -1,8 +1,8 @@
-package usecase.multipleknapsack;
+package research.multipleknapsack;
 
 import org.drone.delivery.ports.outbound.InputFileParser;
-import org.drone.delivery.input.InputFileParserImpl;
-import org.drone.delivery.output.OutputFileWriterImpl;
+import org.drone.delivery.infrastructure.input.InputFileParserImpl;
+import org.drone.delivery.infrastructure.output.OutputFileWriterImpl;
 import org.drone.delivery.ports.outbound.OutputFileWriter;
 import org.drone.delivery.service.DroneDeliveryService;
 import org.drone.delivery.service.DroneDeliveryServiceImpl;

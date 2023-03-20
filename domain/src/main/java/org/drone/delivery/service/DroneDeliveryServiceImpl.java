@@ -5,7 +5,6 @@ import org.drone.delivery.domain.InputData;
 import org.drone.delivery.domain.Location;
 import org.drone.delivery.ports.outbound.InputFileParser;
 import org.drone.delivery.ports.outbound.OutputFileWriter;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;

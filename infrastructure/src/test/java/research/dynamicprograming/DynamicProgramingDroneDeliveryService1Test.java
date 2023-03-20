@@ -1,4 +1,4 @@
-package usecase.dynamicprograming;
+package research.dynamicprograming;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

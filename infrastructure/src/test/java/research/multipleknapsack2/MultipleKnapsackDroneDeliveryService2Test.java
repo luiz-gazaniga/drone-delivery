@@ -1,6 +1,4 @@
-package usecase.multipleknapsack2;
-
-import usecase.dynamicprograming.DynamicProgramingDroneDeliveryService1Test;
+package research.multipleknapsack2;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
