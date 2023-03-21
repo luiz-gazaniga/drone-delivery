@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="test case">
-      <change afterPath="$PROJECT_DIR$/application/src/main/java/org/drone/delivery/application/DroneDeliveryServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/ports/inbound/DroneDeliveryServicePort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="5fa4ff42-e3f3-47d3-b879-5b29fa2ee59e" name="Changes" comment="remove large file">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/application/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/domain/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/service/DroneDeliveryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/org/drone/delivery/service/DroneDeliveryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/src/test/java/org/drone/delivery/domain/test/DroneDeliveryServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/test/java/org/drone/delivery/domain/test/DroneDeliveryServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/research/multipleknapsack/MultipleKnapsackDroneDeliveryServiceRefactorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/src/main/java/org/drone/delivery/bootstrap/DroneDeliveryServiceBootstrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infrastructure/src/test/java/research/multipleknapsack2/MultipleKnapsackDroneDeliveryService2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/infrastructure/src/test/java/research/selected/algorithm/greedy/GreedyDroneDeliveryServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -558,7 +545,28 @@
       <option name="project" value="LOCAL" />
       <updated>1679285327639</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="readme&#10;fix unit tests.&#10;environment variables&#10;remove some unused classes">
+      <created>1679370705482</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1679370705482</updated>
+    </task>
+    <task id="LOCAL-00016" summary="remove large file">
+      <created>1679370874228</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1679370874228</updated>
+    </task>
+    <task id="LOCAL-00017" summary="remove large file">
+      <created>1679371053945</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1679371053945</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -586,7 +594,9 @@
     <MESSAGE value="output refactor" />
     <MESSAGE value="teste of the service." />
     <MESSAGE value="test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="test case" />
+    <MESSAGE value="readme&#10;fix unit tests.&#10;environment variables&#10;remove some unused classes" />
+    <MESSAGE value="remove large file" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove large file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
