@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(path: ':domain')
+    implementation project(path: ':infrastructure')
+    implementation project(path: ':application')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
+    testRuntimeOnly 'bootstrap:org.junit.jupiter:junit-jupiter-engine:5.9.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+ext {
+    javaMainClass = "org.drone.delivery.bootstrap.DroneDeliveryServiceBootstrap"
+    maximumNumberOfDronesInSquad = "100"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+mainClassName = "org.drone.delivery.bootstrap.DroneDeliveryServiceBootstrap"
+
+jar {
+    manifest {
+        attributes(
+                "Main-Class": javaMainClass
+        )
+    }
+}
+
+task runApp(type: JavaExec) {
+    group = "Execution"
+    description = "Run the output executable jar with ExecTask."
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'org.drone.delivery.bootstrap.DroneDeliveryServiceBootstrap'
+    args project.hasProperty('args') ? args : []
+    environment = [
+            MAXIMUM_NUMBER_OF_DRONES_IN_SQUAD: maximumNumberOfDronesInSquad
+    ]
+}
