@@ -156,7 +156,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.DroneDeliveryServiceImplTest.testMaxOfDrones">
+  <component name="RunManager" selected="Gradle.drone-delivery:bootstrap [build]">
     <configuration name="BacktrackingDroneDeliveryServiceTest" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="usecase.backtracking.BacktrackingDroneDeliveryServiceTest" />
       <module name="drone.delivery.infrastructure.test" />
@@ -443,11 +443,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.drone-delivery:bootstrap [build]" />
+        <item itemvalue="Gradle.drone-delivery:bootstrap [clean]" />
         <item itemvalue="Gradle.DroneDeliveryServiceImplTest.testMaxOfDrones" />
         <item itemvalue="Gradle.MultipleKnapsackDroneDeliveryServiceTest.execute" />
-        <item itemvalue="Gradle.drone-delivery:bootstrap [clean]" />
         <item itemvalue="Gradle.DroneDeliveryServiceImplTest.testAssignDeliveries" />
-        <item itemvalue="Gradle.drone-delivery:bootstrap [build]" />
       </list>
     </recent_temporary>
   </component>
