@@ -1,8 +1,7 @@
-package research.multipleknapsack2;
+package research.selected.algorithm.greedy;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -30,35 +29,34 @@ class Location {
         this.weight = weight;
     }
 }
-
-public class MultipleKnapsackDroneDeliveryService2Test {
-    public static void main(String[] args) throws IOException {
-        if (args.length == 0) {
-            System.out.println("Please provide an input file.");
-            return;
-        }
-
-        String fileName = MultipleKnapsackDroneDeliveryService2Test.class.getClassLoader().getResource(args[0]).getFile();
-        BufferedReader reader = new
-                BufferedReader(new FileReader(fileName));
-
+public class GreedyDroneDeliveryServiceTest {
+    @Test
+    public void execute() {
         List<Drone> drones = new ArrayList<>();
-        List<Location> locations = new ArrayList<>();
+        Drone droneA = new Drone("DroneA", 200);
+        Drone droneB = new Drone("DroneB", 250);
+        Drone droneC = new Drone("DroneC", 100);
+        drones.add(droneA);
+        drones.add(droneB);
+        drones.add(droneC);
 
-        String line;
-        while ((line = reader.readLine()) != null) {
-            String[] tokens = line.split(", ");
-            for (int i = 0; i < tokens.length; i += 2) {
-                String itemType = tokens[i].substring(1);
-                int itemValue = Integer.parseInt(tokens[i + 1].substring(1, tokens[i + 1].length() - 1));
-                if (itemType.startsWith("Drone")) {
-                    drones.add(new Drone(itemType, itemValue));
-                } else if (itemType.startsWith("Location")) {
-                    locations.add(new Location(itemType, itemValue));
-                }
-            }
-        }
-        reader.close();
+        List<Location> locations = new ArrayList<>();
+        locations.add(new Location("LocationA", 200));
+        locations.add(new Location("LocationB", 150));
+        locations.add(new Location("LocationC", 50));
+        locations.add(new Location("LocationD", 150));
+        locations.add(new Location("LocationE", 100));
+        locations.add(new Location("LocationF", 200));
+        locations.add(new Location("LocationG", 50));
+        locations.add(new Location("LocationH", 80));
+        locations.add(new Location("LocationI", 70));
+        locations.add(new Location("LocationJ", 50));
+        locations.add(new Location("LocationK", 30));
+        locations.add(new Location("LocationL", 20));
+        locations.add(new Location("LocationM", 50));
+        locations.add(new Location("LocationN", 30));
+        locations.add(new Location("LocationO", 20));
+        locations.add(new Location("LocationP", 90));
 
         assignDeliveries(drones, locations);
 

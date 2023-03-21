@@ -12,9 +12,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 import static org.mockito.Mockito.*;
 
 public class DroneDeliveryServiceImplTest {
@@ -24,12 +31,15 @@ public class DroneDeliveryServiceImplTest {
     private InputFileParser inputFileParser;
     @Mock
     private OutputFileWriter outputFileWriter;
+    @Mock
+    private Map<String, String> env;
 
     @BeforeEach
     public void setUp() {
         inputFileParser = mock(InputFileParser.class);
         outputFileWriter = mock(OutputFileWriter.class);
         droneDeliveryService = new DroneDeliveryServiceImpl(inputFileParser, outputFileWriter);
+        env = new HashMap<>();
     }
 
     @Test
@@ -113,5 +123,40 @@ public class DroneDeliveryServiceImplTest {
             totalLocationsAssigned += trip.size();
         }
         Assertions.assertEquals(totalLocations, totalLocationsAssigned);
+    }
+
+    @Test
+    void testMaxOfDrones() throws IOException {
+        String[] args = new String[]{"input.txt"};
+
+        // Arrange
+        List<Drone> drones = IntStream.range(0, 101)
+                .mapToObj(i -> new Drone("Drone" + i, i * 10))
+                .collect(Collectors.toList());
+
+        Location location1 = new Location("1", 5);
+        Location location2 = new Location("2", 10);
+        Location location3 = new Location("3", 15);
+        List<Location> locations = new ArrayList<>();
+        locations.add(location1);
+        locations.add(location2);
+        locations.add(location3);
+
+        InputData inputData = new InputData(drones, locations);
+
+        // Set up mock behavior
+        doReturn(inputData).when(inputFileParser).parse(args);
+
+        // Act
+        // Try to execute the service with too many drones
+        try {
+            droneDeliveryService.execute(args);
+            Assertions.fail("Expected IllegalArgumentException was not thrown");
+        } catch (IllegalArgumentException e) {
+            // Assert
+            Assertions.assertEquals("The maximum number of drones in a squad is 100", e.getMessage());
+        } catch (Exception e) {
+            Assertions.fail("Unexpected exception thrown: " + e.getMessage());
+        }
     }
 }

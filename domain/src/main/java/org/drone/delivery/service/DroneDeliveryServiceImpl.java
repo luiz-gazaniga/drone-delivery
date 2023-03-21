@@ -11,12 +11,14 @@ import java.util.Comparator;
 import java.util.List;
 
 public class DroneDeliveryServiceImpl implements DroneDeliveryService {
-
+    private final int MAXIMUM_NUMBER_OF_DRONES_IN_SQUAD;
     private InputFileParser inputFileParser;
     private OutputFileWriter outputFileWriter;
     public DroneDeliveryServiceImpl(InputFileParser inputFileParser, OutputFileWriter outputFileWriter){
         this.inputFileParser = inputFileParser;
         this.outputFileWriter = outputFileWriter;
+        this.MAXIMUM_NUMBER_OF_DRONES_IN_SQUAD =
+                Integer.parseInt(System.getenv("MAXIMUM_NUMBER_OF_DRONES_IN_SQUAD") != null ? System.getenv("MAXIMUM_NUMBER_OF_DRONES_IN_SQUAD") : "100");
     }
 
     public void execute(String[] args) throws IOException {
@@ -31,6 +33,8 @@ public class DroneDeliveryServiceImpl implements DroneDeliveryService {
      * @param locations The list of delivery locations to be assigned to the drones.
      */
     private void assignDeliveries(List<Drone> drones, List<Location> locations) {
+        if (drones.size() > MAXIMUM_NUMBER_OF_DRONES_IN_SQUAD)
+            throw new IllegalArgumentException(String.format("The maximum number of drones in a squad is %s", MAXIMUM_NUMBER_OF_DRONES_IN_SQUAD));
         // Sort the locations list in ascending order based on their weight.
         locations.sort(Comparator.comparingInt((Location l) -> l.getWeight()));
 
